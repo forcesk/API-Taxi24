@@ -7,6 +7,7 @@ import com.ecastillo.taxi24.Services.ViajesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,6 +24,12 @@ public class ViajesController {
     @GetMapping()
     public ResponseEntity<List<ViajesModel>> getAllViajes() {
         return this.viajesService.get_AllViajes();
+    }
+
+    // Nuevo Viaje asignado a un pasajero
+    @GetMapping("/nuevo/{idPasajero}")
+    public ResponseEntity<ViajesModel> CreateViaje(@PathVariable("idPasajero") String idPasajero) {
+        return this.viajesService.create_viaje(idPasajero);
     }
 
 }
