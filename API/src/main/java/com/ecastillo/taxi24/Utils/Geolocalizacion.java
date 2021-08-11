@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class Geolocalizacion {
 
-    // Este método proporciona un para ordenado (x,y) que funcionan como coordenadas en 2D
-    // de esta forma podemos simular coordenadas geográficas para este ejercicio.
+    // Este método proporciona un par ordenado (x,y) pseudo aleatorio que funcionan como
+    // coordenadas en 2D, de esta forma podemos simular coordenadas geográficas para este ejercicio.
     // El plano geográfico va desde (0,0) - (90,90) para acotar el ejemplo.
     public ArrayList<Integer> getCoordenadas(){
         ArrayList<Integer> array = new ArrayList();
@@ -14,6 +14,21 @@ public class Geolocalizacion {
         array.add(x);
         array.add(y);
         return array;
+    }
+
+    // Está función calcula la distancia entre 2 pares ordenados.
+    // Cualquier distancia menor a 30 se toma como menor a 3KM
+    public Boolean checkDistancia(Integer inx,Integer iny,Integer tox,Integer toy){
+        Integer diffX = tox-inx;
+        Integer diffY = toy-iny;
+
+        Double dist = Math.pow(diffX,2) +  Math.pow(diffY,2);
+
+        if(Math.sqrt(dist) < 30)
+            return true;
+
+        return false;
+
     }
 
 }

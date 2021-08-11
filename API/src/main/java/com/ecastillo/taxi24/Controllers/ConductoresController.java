@@ -29,4 +29,10 @@ public class ConductoresController {
         return this.conductoresService.get_ConductoresDisponibles();
     }
 
+    // Conductores a menos de 3KM GET
+    @GetMapping("/near")
+    public ResponseEntity<List<ConductoresModel>> getNearConductores() {
+        return this.conductoresService.getRadio3KM();
+    }
+
 }
