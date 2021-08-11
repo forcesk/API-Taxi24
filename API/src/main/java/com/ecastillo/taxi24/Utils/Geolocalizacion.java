@@ -31,4 +31,15 @@ public class Geolocalizacion {
 
     }
 
+    // Está función calcula  y regresa la distancia entre 2 pares ordenados.
+    public Integer getDistance(Integer inx,Integer iny,Integer tox,Integer toy){
+        Integer diffX = tox-inx;
+        Integer diffY = toy-iny;
+
+        Double dist = Math.pow(diffX,2) +  Math.pow(diffY,2);
+
+        return (int)Math.sqrt(dist);
+
+    }
+
 }
