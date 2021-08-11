@@ -100,5 +100,16 @@ public class ConductoresService {
         }
     }
 
+    // Regresa un Conductor por ID
+    public ResponseEntity<ConductoresModel> get_ConductorById(String id) {
+        Optional<ConductoresModel> conductorData = conductoresRepository.findById(id);
+
+        if (conductorData.isPresent()) {
+            return new ResponseEntity<>(conductorData.get(), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
 
 }

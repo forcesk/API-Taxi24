@@ -4,10 +4,7 @@ import com.ecastillo.taxi24.Models.ConductoresModel;
 import com.ecastillo.taxi24.Services.ConductoresService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -36,6 +33,13 @@ public class ConductoresController {
     @GetMapping("/near")
     public ResponseEntity<List<ConductoresModel>> getNearConductores() {
         return this.conductoresService.getRadio3KM();
+    }
+
+
+    // Regresa un conductor por su Id.
+    @GetMapping("/{id}")
+    public ResponseEntity<ConductoresModel> getConductorPorId(@PathVariable("id") String id) {
+        return  this.conductoresService.get_ConductorById(id);
     }
 
 }
