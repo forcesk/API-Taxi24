@@ -15,7 +15,10 @@ db.conductores.insertMany( [
       {_id: "21A", nombre: "Juan",apellido: "Perez",mail: "juan@mail.com", disponible: true},
       {_id: "22B", nombre: "Jorge",apellido: "Dominguez",mail: "mail@mail.com", disponible: true},
       {_id: "25D", nombre: "Juan",apellido: "Rodriguez",mail: "mail2@mail.com", disponible: true},
-      {_id: "33F", nombre: "Luis",apellido: "Hernandez",mail: "mail3@mail.com", disponible: false}
+      {_id: "33F", nombre: "Luis",apellido: "Hernandez",mail: "mail3@mail.com", disponible: false},
+      {_id: "ZZ3", nombre: "Pedro",apellido: "Romero",mail: "mail4@mail.com", disponible: true},
+      {_id: "xx2", nombre: "Manuel",apellido: "Campirano",mail: "mail5@mail.com", disponible: true},
+      {_id: "pw2", nombre: "Arturo",apellido: "Bosque",mail: "mail6@mail.com", disponible: true}
    ] );
 
 
