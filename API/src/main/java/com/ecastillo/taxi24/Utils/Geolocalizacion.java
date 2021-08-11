@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Geolocalizacion {
 
-    // Este método proporciona un par ordenado (x,y) pseudo aleatorio que funcionan como
+    // Este método proporciona un par ordenado (x,y) pseudo-aleatorio que funcionan como
     // coordenadas en 2D, de esta forma podemos simular coordenadas geográficas para este ejercicio.
     // El plano geográfico va desde (0,0) - (90,90) para acotar el ejemplo.
     public ArrayList<Integer> getCoordenadas(){

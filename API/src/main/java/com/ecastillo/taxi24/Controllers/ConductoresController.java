@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -30,6 +31,8 @@ public class ConductoresController {
     }
 
     // Conductores a menos de 3KM GET
+    // La localización del solicitante y de los conductores se obtiene mediante un método
+    // que simula la ubicación dinámica ya que son objetos en movimiento constante.
     @GetMapping("/near")
     public ResponseEntity<List<ConductoresModel>> getNearConductores() {
         return this.conductoresService.getRadio3KM();
