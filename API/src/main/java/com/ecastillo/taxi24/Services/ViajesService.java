@@ -2,6 +2,7 @@ package com.ecastillo.taxi24.Services;
 
 import com.ecastillo.taxi24.Models.ConductoresModel;
 import com.ecastillo.taxi24.Models.ViajesModel;
+import com.ecastillo.taxi24.Repositories.ConductoresRepository;
 import com.ecastillo.taxi24.Repositories.ViajesRepository;
 import com.ecastillo.taxi24.Utils.Geolocalizacion;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,13 @@ import java.util.Optional;
 public class ViajesService {
     @Autowired
     ViajesRepository viajesRepository;
+
+    @Autowired
+    ConductoresRepository conductoresRepository;
+
+    @Autowired
+    FacturasService facturasService;
+
 
     // Obtener toda la lista de Viajes enCurso (Activos)
     public ResponseEntity<List<ViajesModel>> get_AllViajes() {
@@ -45,7 +53,8 @@ public class ViajesService {
             String dest = ""+destino.get(0)+","+destino.get(1);
             LocalDate date = LocalDate.now();
 
-            String conductorId = "ddd"; // Se tiene que arreglar esto hardcodeado
+            List<ConductoresModel> conductores = conductoresRepository.findByDisponibleIsTrue();
+            String conductorId =conductores.get((int)(Math.random() * conductores.size()-1) + 0).getId();
 
             ViajesModel _viaje = viajesRepository.save(new ViajesModel(idPasajero,conductorId, date.toString(),part,dest,true));
             return new ResponseEntity<>(_viaje, HttpStatus.CREATED);
@@ -62,6 +71,10 @@ public class ViajesService {
         if (viajeData.isPresent()) {
             viajeData.get().setEnCurso(false); // Se finaliza el viaje
             viajesRepository.save(viajeData.get());
+
+            // Se crea una factura y se agrega al DB
+            facturasService.create_Factura(viajeData.get().getId(),viajeData.get().getPasajeroId(),viajeData.get().getConductorId(),viajeData.get().getFecha());
+
             return new ResponseEntity<>(viajeData.get(), HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);

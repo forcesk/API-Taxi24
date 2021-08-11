@@ -12,11 +12,11 @@ public class FacturasModel {
     private String conductorId;
     private String pasajeroId;
     private String fecha;
-    private Float tarifa;
+    private Double tarifa;
 
     public FacturasModel(){}
 
-    public FacturasModel(String viajeId, String conductorId, String pasajeroId, String fecha, Float tarifa) {
+    public FacturasModel(String viajeId, String conductorId, String pasajeroId, String fecha, Double tarifa) {
         this.viajeId = viajeId;
         this.conductorId = conductorId;
         this.pasajeroId = pasajeroId;
@@ -64,11 +64,11 @@ public class FacturasModel {
         this.fecha = fecha;
     }
 
-    public Float getTarifa() {
+    public Double getTarifa() {
         return tarifa;
     }
 
-    public void setTarifa(Float tarifa) {
+    public void setTarifa(Double tarifa) {
         this.tarifa = tarifa;
     }
 
