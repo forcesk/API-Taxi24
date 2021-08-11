@@ -32,4 +32,10 @@ public class ViajesController {
         return this.viajesService.create_viaje(idPasajero);
     }
 
+    // Finalizar un Viaje
+    @GetMapping("/end/{idViaje}")
+    public ResponseEntity<ViajesModel> endViaje(@PathVariable("idViaje") String idViaje) {
+        return this.viajesService.end_Viaje(idViaje);
+    }
+
 }

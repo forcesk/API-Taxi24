@@ -1,5 +1,6 @@
 package com.ecastillo.taxi24.Services;
 
+import com.ecastillo.taxi24.Models.ConductoresModel;
 import com.ecastillo.taxi24.Models.ViajesModel;
 import com.ecastillo.taxi24.Repositories.ViajesRepository;
 import com.ecastillo.taxi24.Utils.Geolocalizacion;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ViajesService {
@@ -42,11 +44,28 @@ public class ViajesService {
             ArrayList<Integer> destino = geolocalizacion.getCoordenadas();
             String dest = ""+destino.get(0)+","+destino.get(1);
             LocalDate date = LocalDate.now();
-            String conductorId = "ddd";
+
+            String conductorId = "ddd"; // Se tiene que arreglar esto hardcodeado
+
             ViajesModel _viaje = viajesRepository.save(new ViajesModel(idPasajero,conductorId, date.toString(),part,dest,true));
             return new ResponseEntity<>(_viaje, HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+
+    // Finaliza un Viaje por ID
+    public ResponseEntity<ViajesModel> end_Viaje(String idViaje) {
+        Optional<ViajesModel> viajeData = viajesRepository.findById(idViaje);
+
+        if (viajeData.isPresent()) {
+            viajeData.get().setEnCurso(false); // Se finaliza el viaje
+            viajesRepository.save(viajeData.get());
+            return new ResponseEntity<>(viajeData.get(), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
 }
