@@ -7,4 +7,4 @@
 > brew services stop mongodb-community@5.0
 
 * Crear estructura de la DB
-> mongo localhost:27017/taxi24 models/mongoDB.js
+> mongo localhost:27017/taxi24 Models/mongoDB.js
