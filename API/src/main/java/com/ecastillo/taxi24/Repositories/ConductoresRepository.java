@@ -8,6 +8,5 @@ import java.util.List;
 
 @Repository
 public interface ConductoresRepository extends MongoRepository<ConductoresModel,String> {
-    //List<ConductoresModel> findByDisponible(Boolean disponible);
-
+    List<ConductoresModel> findByDisponibleIsTrue();
 }

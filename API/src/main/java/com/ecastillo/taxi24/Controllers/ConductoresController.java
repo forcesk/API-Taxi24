@@ -23,4 +23,10 @@ public class ConductoresController {
         return this.conductoresService.get_AllConductores();
     }
 
+    // Conductores Disponibles GET
+    @GetMapping("/disponibles")
+    public ResponseEntity<List<ConductoresModel>> getConductoresDisponibles() {
+        return this.conductoresService.get_ConductoresDisponibles();
+    }
+
 }

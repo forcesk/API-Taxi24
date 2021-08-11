@@ -33,6 +33,22 @@ public class ConductoresService {
         }
     }
 
+    // Obtiene la lista de conductores Disponibles
+    public ResponseEntity<List<ConductoresModel>> get_ConductoresDisponibles() {
+        try {
+            List<ConductoresModel> conductores = conductoresRepository.findByDisponibleIsTrue();
+
+            if (conductores.isEmpty()) {
+                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            }
+
+            return new ResponseEntity<>(conductores, HttpStatus.OK);
+
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
 
 
 }
