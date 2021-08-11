@@ -9,5 +9,5 @@ import java.util.List;
 
 @Repository
 public interface ViajesRepository extends MongoRepository<ViajesModel,String> {
-   // List<ViajesModel> findByEnCurso(Boolean enCurso);
+    List<ViajesModel> findByEnCursoTrue();
 }
