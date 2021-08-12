@@ -70,7 +70,7 @@ Para iniciar el servidor se inician los servicios de SpringBoot.
 
 ## Pruebas
 
-> Para ejecutar todas las pruebas en Intellij 
-![alt text](https://github.com/forcesk/API-Taxi24/blob/8ecf4e81579f6c583c5d03a97b7f8e23623778bc/img/test1.png)
+* Para ejecutar todas las pruebas en Intellij 
+> ![alt text](https://github.com/forcesk/API-Taxi24/blob/8ecf4e81579f6c583c5d03a97b7f8e23623778bc/img/test1.png)
 
 
