@@ -20,7 +20,7 @@ Primero se inician los servicios de MongoDB en este caso para MAC con ayuda de b
 Desde la carpeta raiz del proyecto se debe cargar la estructura de la base de datos y algunas entradas incluidas para los ejemplos.
 
 ```
-mongo localhost:27017/taxi24 Models/mongoDB.js
+mongo localhost:27017/taxi24 Models/insertDB.js
 ```
 
 
