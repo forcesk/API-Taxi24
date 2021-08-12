@@ -54,3 +54,10 @@ Para iniciar el servidor se inician los servicios de SpringBoot.
 * Obtener la lista de todos los viajes ACTIVOS.
 > http://localhost:8080/viajes
 
+### Pasajeros
+* Obtener la lista de todos los pasajeros 
+> http://localhost:8080/pasajeros
+* Obtener un pasajero por ID, donde {id} debe ser alguno de los registrados.
+> http://localhost:8080/pasajeros/{id}
+* Obtener los 3 conductores más cercarnos al punto de partida del usuario que lo solicita, donde {usuarioId} es el id del usuario que lo solicita.
+> http://localhost:8080/pasajeros/near/{usuarioId}
