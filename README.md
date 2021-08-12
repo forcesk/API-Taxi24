@@ -31,7 +31,7 @@ Para iniciar el servidor se inician los servicios de SpringBoot.
 ```
 
 ## Esta implementación obedece al siguiente esquema:
-![alt text](https://github.com/forcesk/API-Taxi24/blob/d6ebc9ccaa22b5e6bee751406e34385da58808bc/img/estructura.png)
+> ![alt text](https://github.com/forcesk/API-Taxi24/blob/d6ebc9ccaa22b5e6bee751406e34385da58808bc/img/estructura.png)
 
 ## API y EndPoints
 
