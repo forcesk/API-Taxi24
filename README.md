@@ -18,11 +18,10 @@ Primero se inician los servicios de MongoDB en este caso para MAC con ayuda de b
 
 
 Desde la carpeta raiz del proyecto se debe cargar la estructura de la base de datos y algunas entradas incluidas para los ejemplos.
-
+> [Estructura de la base de datos](https://github.com/forcesk/API-Taxi24/blob/9733585a87b16e427808a1e312cc337d89b44535/Models/insertDB.js)
 ```
 mongo localhost:27017/taxi24 Models/insertDB.js
 ```
-> [Estructura db](https://github.com/forcesk/API-Taxi24/blob/9733585a87b16e427808a1e312cc337d89b44535/Models/insertDB.js)
 
 
 Para iniciar el servidor se inician los servicios de SpringBoot.
