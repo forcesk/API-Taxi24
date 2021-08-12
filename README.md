@@ -31,8 +31,6 @@ Para iniciar el servidor se inician los servicios de SpringBoot.
 
 ```
 
-> En el archivo properties del proyecto se configuró el puerto http como dinámico para no crear conflictos de puertos ocupados :thumbsup: 
-
 ### Esta implementación obedece al siguiente esquema:
 ![alt text](https://github.com/forcesk/API-Taxi24/blob/d6ebc9ccaa22b5e6bee751406e34385da58808bc/img/estructura.png)
 
@@ -43,4 +41,7 @@ Para iniciar el servidor se inician los servicios de SpringBoot.
 > http://localhost:8080/conductores
 * Obtener la lista de todos los conductores DISPONIBLES 
 > http://localhost:8080/conductores/disponibles
-
+* Obtener la lista de todos los conductores DISPONIBLES en un radio de 3KM a partir de la ubicación de la ubicación del usuario que solicita.
+> http://localhost:8080/conductores/near
+* Obtener un conductor por ID, donde {id} debe ser alguno de los registrados.
+> http://localhost:8080/conductores/{id}
