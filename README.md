@@ -1,4 +1,4 @@
-# API Taxi24
+# API Taxi24 :taxi:
 
 ## Librerías
 * [Spring Boot](https://spring.io/projects/spring-boot)
@@ -46,7 +46,7 @@ Para iniciar el servidor se inician los servicios de SpringBoot.
 > http://localhost:8080/conductores/{id}
 
 
-### Viajes
+### Viajes :oncoming_taxi:
 * Crear una nueva solicitud de viaje asignando un conductor al solicitante, donde idPasajero es un id de algun pasajero registrado.
 > http://localhost:8080/viajes/nuevo/{idPasajero}
 * Completar un viaje activo, donde idViaje es el id de algun viaje activo registrado. Se agrega una factura nueva.
@@ -54,21 +54,21 @@ Para iniciar el servidor se inician los servicios de SpringBoot.
 * Obtener la lista de todos los viajes ACTIVOS.
 > http://localhost:8080/viajes
 
-### Pasajeros
+### Pasajeros :walking: 
 * Obtener la lista de todos los pasajeros 
 > http://localhost:8080/pasajeros
 * Obtener un pasajero por ID, donde {id} debe ser alguno de los registrados.
 > http://localhost:8080/pasajeros/{id}
 * Obtener los 3 conductores más cercarnos al punto de partida del usuario que lo solicita, donde {usuarioId} es el id del usuario que lo solicita.
 > http://localhost:8080/pasajeros/near/{usuarioId}
-
-### Facturas
+ 
+### Facturas :page_with_curl:
 * Obtener la lista de todas las facturas registradas.
 > http://localhost:8080/facturas
 * Las facturas nuevas son agregadas cuando se finaliza un viaje activo.
 
 
-## Pruebas
+## Pruebas :construction_worker:
 
 * Para ejecutar todas las pruebas en Intellij 
 > ![alt text](https://github.com/forcesk/API-Taxi24/blob/8ecf4e81579f6c583c5d03a97b7f8e23623778bc/img/test1.png)
