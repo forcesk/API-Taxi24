@@ -49,7 +49,7 @@ Para iniciar el servidor se inician los servicios de SpringBoot.
 #### Viajes
 * Crear una nueva solicitud de viaje asignando un conductor al solicitante, donde idPasajero es un id de algun pasajero registrado.
 > http://localhost:8080/viajes/nuevo/{idPasajero}
-* Completar un viaje activo, donde idViaje es el id de algun viaje activo registrado.
+* Completar un viaje activo, donde idViaje es el id de algun viaje activo registrado. Se agrega una factura nueva.
 > http://localhost:8080/viajes/end/{idViaje}
 * Obtener la lista de todos los viajes ACTIVOS.
 > http://localhost:8080/viajes
@@ -61,3 +61,9 @@ Para iniciar el servidor se inician los servicios de SpringBoot.
 > http://localhost:8080/pasajeros/{id}
 * Obtener los 3 conductores más cercarnos al punto de partida del usuario que lo solicita, donde {usuarioId} es el id del usuario que lo solicita.
 > http://localhost:8080/pasajeros/near/{usuarioId}
+
+### Facturas
+* Obtener la lista de todas las facturas registradas.
+> http://localhost:8080/facturas
+* Las facturas nuevas son agregadas cuando se finaliza un viaje activo.
+
