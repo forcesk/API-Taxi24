@@ -22,6 +22,7 @@ Desde la carpeta raiz del proyecto se debe cargar la estructura de la base de da
 ```
 mongo localhost:27017/taxi24 Models/insertDB.js
 ```
+> [Estructura db](https://github.com/forcesk/API-Taxi24/blob/9733585a87b16e427808a1e312cc337d89b44535/Models/insertDB.js)
 
 
 Para iniciar el servidor se inician los servicios de SpringBoot.
