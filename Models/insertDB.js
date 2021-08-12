@@ -54,8 +54,8 @@ enCurso: Boolean
 }
 */
 db.viajes.insertMany( [
-        {_id: "V001", pasajeroId: "21A", conductorId: "55G", fecha: "09/08/2021", partida: "55,77", destino: "102,21", enCurso: false},
-        {_id: "V002", pasajeroId: "77F", conductorId: "33F", fecha: "11/08/2021", partida: "12,22", destino: "99,32", enCurso: true}
+        {_id: "V001", pasajeroId: "21A", conductorId: "55G", fecha: "2021-08-09", partida: "55,77", destino: "102,21", enCurso: false},
+        {_id: "V002", pasajeroId: "77F", conductorId: "33F", fecha: "2021-08-11", partida: "12,22", destino: "99,32", enCurso: true}
             ] );
 
 
@@ -68,10 +68,10 @@ viajeId: STRING
 conductorId: STRING
 pasajeroId: STRING
 fecha: STRING
-tarifa: FlOAT
+tarifa: DOUBLE
 }
 */
 db.facturas.insertMany( [
-        {_id: "F001", viajeId: "V001",conductorId: "55G", pasajeroId: "21A", fecha: "09/08/2021", tarifa: 30.00},
+        {_id: "F001", viajeId: "V001",conductorId: "55G", pasajeroId: "21A", fecha: "2021-08-10", tarifa: 30.00},
 
                         ] );
