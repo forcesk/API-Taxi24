@@ -78,15 +78,18 @@ public class PasajerosService {
                 ArrayList<Integer> coor_conductor = new ArrayList();
                 coor_conductor =  geolocalizacion.getCoordenadas();
 
+                // Se obtiene la distancia entre el solicitante y el conductor
                 list.add(geolocalizacion.getDistance(coor_conductor.get(0),coor_conductor.get(1),coor_solicitud.get(0),coor_solicitud.get(1)));
                 Sort_list.add(list.get(i));
             }
 
+            // Se ordenan las distancias de menor a mayor.
             Sort_list.sort(Comparator.naturalOrder());
 
             for(int i=0;i<Sort_list.size();i++)
                 System.out.println(Sort_list.get(i));
 
+            // Se obtiene el indice del conductor a partir de la distancia entre solicitante-conductor
             for(int i=0;i<total;i++){
                 for(int j=0;j<Sort_list.size();j++) {
                     if (Sort_list.get(i)==list.get(j))
@@ -94,12 +97,15 @@ public class PasajerosService {
                 }
             }
 
+            // se marca los conductores cercanos poniendo disponible en falso momentaneamente
             for(int i=0;i<total;i++){
                 conductores.get(resp.get(i)).setDisponible(false);
             }
 
+            // Se remueven de la lista los conductores no disponibles
             conductores.removeIf(n -> (n.getDisponible() == false));
 
+            // Se regresan los conductores cercanos
             return new ResponseEntity<>(conductores, HttpStatus.OK);
 
         } catch (Exception e) {

@@ -80,17 +80,20 @@ public class ConductoresService {
                 System.out.println("Coordenadas Conductor id: "+conductores.get(i).getId());
                 System.out.println(coor_conductor);
 
+                // Si el conductor esta a más de 3KM se marca momentaneamente como NO DISPONIBLE
                 if(!geolocalizacion.checkDistancia(coor_conductor.get(0),coor_conductor.get(1),coor_solicitud.get(0),coor_solicitud.get(1))){
                     System.out.println("Muy lejos");
                     conductores.get(i).setDisponible(false);
                 }
 
                 else{
-                    System.out.println("Conductor Cercano");
+                    System.out.println("Conductor cercano");
                 }
 
             }
 
+            // función lambda que remueve conductores no disponibles, de esta manera
+            // solo se pasan los conductores cercanos >3KM
             conductores.removeIf(n -> (n.getDisponible() == false));
 
             return new ResponseEntity<>(conductores, HttpStatus.OK);

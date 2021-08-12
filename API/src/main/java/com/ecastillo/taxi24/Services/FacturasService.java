@@ -20,10 +20,13 @@ public class FacturasService {
     @Autowired
     FacturasRepository facturasRepository;
 
-    // Agregar una nueva Factura
-    public void create_Factura(String viajeId, String conductorId, String idPasajero, String fecha) {
+
+    // Agregar una nueva Factura al finalizar el viaje
+    public void create_Factura(String viajeId, String conductorId, String idPasajero, String fecha,Integer distance) {
         try {
-            Double tarifa = 25.0; // Precio del servicio.
+            Geolocalizacion geolocalizacion = new Geolocalizacion();
+            Double tarifa = geolocalizacion.getTarifa(distance); //  Se calcula el precio del servicio
+            System.out.println("Tarifa: "+tarifa);
             facturasRepository.save(new FacturasModel(viajeId,conductorId,idPasajero,fecha,tarifa));
 
         } catch (Exception e) {

@@ -42,4 +42,8 @@ public class Geolocalizacion {
 
     }
 
+    public double getTarifa(Integer distance){
+        return distance*1.5;
+    }
+
 }
