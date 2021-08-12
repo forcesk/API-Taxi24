@@ -47,9 +47,9 @@ Para iniciar el servidor se inician los servicios de SpringBoot.
 
 
 ### Viajes :oncoming_taxi:
-* Crear una nueva solicitud de viaje asignando un conductor al solicitante, donde idPasajero es un id de algun pasajero registrado.
+* Crear una nueva solicitud de viaje asignando un conductor al solicitante, donde {idPasajero} es el id de algun pasajero registrado.
 > http://localhost:8080/viajes/nuevo/{idPasajero}
-* Completar un viaje activo, donde idViaje es el id de algun viaje activo registrado. Se agrega una factura nueva.
+* Completar un viaje activo, donde {idViaje} es el id de algun viaje activo registrado. Se agrega una factura nueva.
 > http://localhost:8080/viajes/end/{idViaje}
 * Obtener la lista de todos los viajes ACTIVOS.
 > http://localhost:8080/viajes
