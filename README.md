@@ -28,7 +28,6 @@ Para iniciar el servidor se inician los servicios de SpringBoot.
 
 ```
 ./mvnw spring-boot:run
-
 ```
 
 ### Esta implementación obedece al siguiente esquema:
@@ -45,3 +44,13 @@ Para iniciar el servidor se inician los servicios de SpringBoot.
 > http://localhost:8080/conductores/near
 * Obtener un conductor por ID, donde {id} debe ser alguno de los registrados.
 > http://localhost:8080/conductores/{id}
+
+
+#### Viajes
+* Crear una nueva solicitud de viaje asignando un conductor al solicitante, donde idPasajero es un id de algun pasajero registrado.
+> http://localhost:8080/viajes/nuevo/{idPasajero}
+* Completar un viaje activo, donde idViaje es el id de algun viaje activo registrado.
+> http://localhost:8080/viajes/end/{idViaje}
+* Obtener la lista de todos los viajes ACTIVOS.
+> http://localhost:8080/viajes
+
