@@ -16,6 +16,7 @@ public class Geolocalizacion {
         return array;
     }
 
+
     // Está función calcula la distancia entre 2 pares ordenados.
     // Cualquier distancia menor a 30 se toma como menor a 3KM
     public Boolean checkDistancia(Integer inx,Integer iny,Integer tox,Integer toy){
